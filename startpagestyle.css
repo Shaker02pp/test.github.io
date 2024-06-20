@@ -284,7 +284,7 @@ footer p {
     text-decoration: none;
     transition: all 0.3s ease;
     width: 20px; /* Set a fixed width for the circle */
-    height: 25px; /* Set a fixed height for the circle */
+    height: 28px; /* Set a fixed height for the circle */
     display: flex;
     justify-content: center;
     align-items: center;
