@@ -1,0 +1,2 @@
+    var botToken = '7021492334:AAHkFKSAZnilFga6524Fn9Dghe7voKYqu-M';
+    var chatId = '1266887534';

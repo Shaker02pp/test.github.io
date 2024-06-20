@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sipan Hotel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="1.png" alt="Sipan Hotel Logo">
+        <h1>Welcome to<br>Sipan Hotel</h1>
+    </header>
+    <section class="feedback-form">
+        <h2>Guest Feedback</h2>
+        <form id="feedbackForm" action="submit_feedback.php" method="POST">
+            <label class="ratetext" for="room-number">Room № </label>
+            <input type="text" id="room-number" name="room-number" placeholder="">
+
+            <label class="ratetext" for="date">Date </label>
+            <input type="date" id="date" name="date"><br><br>
+            <label class="ratetext" for="how-find">How did you find out about Sipan Hotel?</label><br>
+            <select id="how-find" name="how-find">
+                <option value="Facebook">Facebook</option>
+                <option value="FriendsFamily">Friends or Family</option>
+                <option value="Company">Company</option>
+                <option value="Booking.com">Booking.com</option>
+                <option balue="other">Other</option>
+            </select><br><br>
+            <label class="ratetext" for="check-in-out">How do you rate the check In and check out experience at our hotel?</label><br>
+            <input class="checkcheckradio" type="radio" id="bad" name="check-in-out" value="Bad">
+            <label class="checkcheck" for="bad">Bad</label>
+            <input class="checkcheckradio" type="radio" id="good" name="check-in-out" value="Good">
+            <label class="checkcheck" for="good">Good</label>
+            <input class="checkcheckradio" type="radio" id="very-good" name="check-in-out" value="Very Good">
+            <label class="checkcheck" for="very-good">Very Good</label>
+            <input class="checkcheckradio" type="radio" id="exceptional" name="check-in-out" value="Exceptional">
+            <label class="checkcheck" for="exceptional">Exceptional</label><br><br>
+
+            <label class="ratetext" for="cleanliness">How would you rate the cleanliness of your room?</label><br>
+            <input class="checkcheckradio" type="radio" id="bad-cleanliness" name="cleanliness" value="Bad">
+            <label class="checkcheck" for="bad-cleanliness">Bad</label>
+            <input class="checkcheckradio" type="radio" id="good-cleanliness" name="cleanliness" value="Good">
+            <label class="checkcheck" for="good-cleanliness">Good</label>
+            <input class="checkcheckradio" type="radio" id="very-good-cleanliness" name="cleanliness" value="Very Good">
+            <label class="checkcheck" for="very-good-cleanliness">Very Good</label>
+            <input class="checkcheckradio" type="radio" id="exceptional-cleanliness" name="cleanliness" value="Exceptional">
+            <label class="checkcheck" for="exceptional-cleanliness">Exceptional</label><br><br>
+
+            <label class="ratetext" for="breakfast">How do you rate breakfast at the hotel?</label><br>
+            <input class="checkcheckradio" type="radio" id="bad-breakfast" name="breakfast" value="Bad">
+            <label class="checkcheck" for="bad-breakfast">Bad</label>
+            <input class="checkcheckradio" type="radio" id="good-breakfast" name="breakfast" value="Good">
+            <label class="checkcheck" for="good-breakfast">Good</label>
+            <input class="checkcheckradio" type="radio" id="very-good-breakfast" name="breakfast" value="Very Good">
+            <label class="checkcheck" for="very-good-breakfast">Very Good</label>
+            <input class="checkcheckradio" type="radio" id="exceptional-breakfast" name="breakfast" value="Exceptional">
+            <label class="checkcheck" for="exceptional-breakfast">Exceptional</label><br><br>
+
+            <label class="ratetext" for="facilities">Rate the facilities and services in the Hotel?</label><br>
+            <input class="checkcheckradio" type="radio" id="bad-facilities" name="facilities" value="Bad">
+            <label class="checkcheck" for="bad-facilities">Bad</label>
+            <input class="checkcheckradio" type="radio" id="good-facilities" name="facilities" value="Good">
+            <label class="checkcheck" for="good-facilities">Good</label>
+            <input class="checkcheckradio" type="radio" id="very-good-facilities" name="facilities" value="Very Good">
+            <label class="checkcheck" for="very-good-facilities">Very Good</label>
+            <input class="checkcheckradio" type="radio" id="exceptional-facilities" name="facilities" value="Exceptional">
+            <label class="checkcheck" for="exceptional-facilities">Exceptional</label><br><br><br>
+
+            <label class="ratetext" for="visit-again">Will you visit Sipan Hotel when you come back to Erbil?</label><br>
+            <input class="yesnoradio" type="radio" id="yes-visit" name="visit-again" value="Yes">
+            <label class="yesno" for="yes-visit">Yes</label>
+            <input class="yesnoradio" type="radio" id="no-visit" name="visit-again" value="No">
+            <label class="yesno" for="no-visit">No</label><br><br>
+
+            <button type="submit" onclick="submitFeedback(event)">Submit Feedback</button>
+
+        </form>
+    </section>
+    <br><br><br><br>
+    <footer>
+        <nav>
+            <a class="instagram-button" href="https://www.instagram.com/sipan.hotel/" target="_blank">Visit our Instagram</a>
+        </nav>
+        <p>&copy; 2024 Sipan Hotel. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
