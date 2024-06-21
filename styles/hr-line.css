@@ -1,0 +1,6 @@
+.styled-hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, #627482, #b1ddff);
+    margin: 20px 0;
+}
