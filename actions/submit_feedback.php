@@ -1,45 +1,46 @@
 <?php
+// Enable error reporting for debugging
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Collect form data
     $roomNumber = $_POST['room-number'];
-    $date = $_POST['date'];
     $howFind = $_POST['how-find'];
-    $receptionStaff = $_POST['reception-staff'];
-    $cleanliness = $_POST['cleanliness'];
-    $breakfast = $_POST['breakfast'];
-    $facilities = $_POST['facilities'];
-    $visitAgain = $_POST['visit-again'];
+    // Add other fields as per your form
 
-    $message = "Room Number: $roomNumber\n"
-             . "Date: $date\n"
-             . "How did you find out about Sipan Hotel?: $howFind\n"
-             . "Reception Staff: $receptionStaff\n"
-             . "Cleanliness: $cleanliness\n"
-             . "Breakfast: $breakfast\n"
-             . "Facilities: $facilities\n"
-             . "Will visit again: $visitAgain";
+    // Print received data for debugging
+    echo "<h2>Received Data:</h2>";
+    echo "<p>Room Number: $roomNumber</p>";
+    echo "<p>How did you find us?: $howFind</p>";
+    // Print other fields as needed for debugging
 
-    $botToken = "7021492334:AAHkFKSAZnilFga6524Fn9Dghe7voKYqu-M";
-    $chatId = "1266887534"; // Replace with your chat ID or use @username for direct messages
+    // Example: Insert data into SQLite database
+    $databasePath = '../database/hotel-rating.db'; // Adjust path as necessary
 
-    $url = "https://api.telegram.org/bot$botToken/sendMessage";
+    try {
+        // Create or open the SQLite database
+        $db = new SQLite3($databasePath);
 
-    $data = [
-        'chat_id' => $chatId,
-        'text' => $message
-    ];
+        // Prepare SQL statement
+        $stmt = $db->prepare("INSERT INTO hotel_ratings (room_number, how_find) VALUES (:roomNumber, :howFind)");
+        $stmt->bindValue(':roomNumber', $roomNumber, SQLITE3_TEXT);
+        $stmt->bindValue(':howFind', $howFind, SQLITE3_TEXT);
 
-    $options = [
-        'http' => [
-            'method' => 'POST',
-            'header' => "Content-Type:application/x-www-form-urlencoded\r\n",
-            'content' => http_build_query($data),
-        ]
-    ];
+        // Execute the statement
+        $result = $stmt->execute();
 
-    $context = stream_context_create($options);
-    $result = file_get_contents($url, false, $context);
+        // Check if insertion was successful
+        if ($result) {
+            echo "<p>Data inserted successfully into SQLite database!</p>";
+        } else {
+            echo "<p>Error inserting data into SQLite database.</p>";
+        }
 
-    header('Location: ../thanks/thankyou.html');
-    exit;
+        // Close database connection
+        $db->close();
+    } catch (Exception $e) {
+        echo "Error: " . $e->getMessage();
+    }
 }
 ?>
