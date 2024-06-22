@@ -1,0 +1,33 @@
+.star-rating {
+white-space: nowrap;
+}
+.star-rating [type="radio"] {
+appearance: none;
+}
+.star-rating i {
+font-size: 2em;
+padding: 10px 10px;
+color: #22274f;
+transition: 0.3s;
+}
+
+.star-rating label:is(:hover, :has(~ :hover)) i {
+transform: scale(1.35);
+color: #4a5365;
+animation: jump 0.5s calc(0.3s + (var(--i) - 1) * 0.15s) alternate infinite;
+}
+
+.star-rating label:has(~ :checked) i {
+color: #b1ddff;
+text-shadow: 0 0 2px #ffffff, 0 0 10px #b1ddff;
+}
+
+@keyframes jump {
+0%,
+50% {
+    transform: translatey(0) scale(1.35);
+}
+100% {
+    transform: translatey(-15%) scale(1.35);
+}
+}

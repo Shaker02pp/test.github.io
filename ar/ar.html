@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="arabiclanguage">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sipan Hotel</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/ratingstars.css">
+    <link rel="stylesheet" href="../styles/hr-line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMk7f9AZur1HG5vXrsedxHrJYfpcTWyfkqV0s5u" crossorigin="anonymous">
+
+</head>
+<body>
+    <header>
+        <img src="../images/logowhiteA.png" alt="Sipan Hotel Logo">
+    </header>
+    <section class="feedback-form">
+        <!--h2>Guest Feedback</h2><br-->
+        <form id="feedbackForm" action="../actions/submit_feedback.php" method="POST">
+            <label class="ratetext" for="room-number"></label>
+            <input type="text" id="room-number" name="room-number" placeholder="رقم الغرفة"><br><br>
+            <hr class="styled2-hr">
+
+            <label class="ratetext" for="how-find"> كيف تعرفت على فندق سيبان؟ </label><br>
+            <input class="checkcheckradio" type="radio" id="facebook" name="how-find" value="Facebook">
+            <label class="checkcheck" for="facebook">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;فيسبوك &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input class="checkcheckradio" type="radio" id="friendsfamily" name="how-find" value="Friends & Family">
+            <label class="checkcheck" for="friendsfamily"> العائلة أو الأصدقاء</label><br>
+            <input class="checkcheckradio" type="radio" id="company" name="how-find" value="Company">
+            <label class="checkcheck" for="company">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;شركة &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input class="checkcheckradio" type="radio" id="booking" name="how-find" value="Booking.com">
+            <label class="checkcheck" for="booking">&nbsp;&nbsp; Booking.com &nbsp;&nbsp;</label><br>
+            <input class="checkcheckradio" type="radio" id="other" name="how-find" value="Other">
+            <label class="checkcheck" for="other">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; آخر&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><br>
+        
+            <!-- Check-in and Check-out Rating -->
+            <hr class="styled-hr">
+            <div class="rating">
+                <label class="ratetextstars" for="reception-staff">موظفي الاستقبال</label><br>
+                <span class="star-rating">
+                    <label for="bad" style="--i:1"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" id="bad" name="reception-staff" value="1">
+                    <label for="notbad" style="--i:2"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" id="notbad" name="reception-staff" value="2">
+                    <label for="good" style="--i:3"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" id="good" name="reception-staff" value="3" checked>
+                    <label for="very-good" style="--i:4"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" id="very-good" name="reception-staff" value="4">
+                    <label for="exceptional" style="--i:5"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" id="exceptional" name="reception-staff" value="5">
+                </span>
+            </div><br>
+
+            <!-- Cleanliness Rating -->
+            <hr class="styled-hr">
+            <div class="rating">
+                <label class="ratetextstars" for="cleanliness"> النظافة</label><br>
+                <span class="star-rating">
+                    <label for="bad-cleanliness" style="--i:1"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" id="bad-cleanliness" name="cleanliness" value="1">
+                    <label for="notbad-cleanliness" style="--i:2"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" id="notbad-cleanliness" name="cleanliness" value="2">
+                    <label for="good-cleanliness" style="--i:3"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" id="good-cleanliness" name="cleanliness" value="3" checked>
+                    <label for="very-good-cleanliness" style="--i:4"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" id="very-good-cleanliness" name="cleanliness" value="4">
+                    <label for="exceptional-cleanliness" style="--i:5"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" id="exceptional-cleanliness" name="cleanliness" value="5">
+                </span>
+            </div><br>
+
+            <!-- Breakfast Rating -->
+            <hr class="styled-hr">
+            <div class="rating">
+                <label class="ratetextstars" for="breakfast">الفطور</label><br>
+                <span class="star-rating">
+                    <label for="bad-breakfast" style="--i:1"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" id="bad-breakfast" name="breakfast" value="1">
+                    <label for="notbad-breakfast" style="--i:2"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" id="notbad-breakfast" name="breakfast" value="2">
+                    <label for="good-breakfast" style="--i:3"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" id="good-breakfast" name="breakfast" value="3" checked>
+                    <label for="very-good-breakfast" style="--i:4"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" id="very-good-breakfast" name="breakfast" value="4">
+                    <label for="exceptional-breakfast" style="--i:5"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" id="exceptional-breakfast" name="breakfast" value="5">
+                </span>
+            </div><br>
+
+            <!-- Facilities Rating -->
+            <hr class="styled-hr">
+            <div class="rating">
+                <label class="ratetextstars" for="facilities">المرافق والخدمات</label><br>
+                <span class="star-rating">
+                    <label for="bad-facilities" style="--i:1"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" id="bad-facilities" name="facilities" value="1">
+                    <label for="notbad-facilities" style="--i:2"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" id="notbad-facilities" name="facilities" value="2">
+                    <label for="good-facilities" style="--i:3"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" id="good-facilities" name="facilities" value="3" checked>
+                    <label for="very-good-facilities" style="--i:4"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" id="very-good-facilities" name="facilities" value="4">
+                    <label for="exceptional-facilities" style="--i:5"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" id="exceptional-facilities" name="facilities" value="5">
+                </span>
+            </div><br><br>
+
+
+            
+
+            <label class="ratetext" for="visit-again">هل ستزور فندق سيبان في المرة القادمة؟</label><br>
+            <input class="yesnoradio" type="radio" id="yes-visit" name="visit-again" value="Yes">
+            <label class="yesno" for="yes-visit">نعم</label>
+            <input class="yesnoradio" type="radio" id="no-visit" name="visit-again" value="No">
+            <label class="yesno" for="no-visit">&nbsp;لا&nbsp;</label><br><br><br>
+            
+            <label class="guestnotelabel" for="guest-note">!نحن نحب أن نستمع إلى آراء زبوننا<br>.قم بإسقاط تعليق أدناه حول تجربتك</label><br>
+            <textarea class="guestnote" id="guest-note" name="guest-note" placeholder="" oninput="autoResize()"></textarea><br><br>
+
+
+            <button type="submit" onclick="submitFeedback(event)">ارسال تقييمك</button>
+
+        </form>
+    </section>
+
+    <footer>
+        <nav class="footer-nav">
+            <a href="tel:+9647503884441" class="footer-button">
+                <i class="fas fa-phone"></i>
+            </a>
+            <a href="https://maps.app.goo.gl/JD1T4gMhumbRRNhi7" class="footer-button">
+                <i class="fas fa-map-marker-alt"></i>
+            </a>
+            <a href="mailto:reservations@sipanhotels.com" class="footer-button">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://www.facebook.com/sipan.hotel.erbil" class="footer-button">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/sipan.hotel/" class="footer-button">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </nav>
+        <p>+964 750 388 44 41 — +964 772 476 48 40<br><hr class="styled3-hr">&copy;2024 .فندق سيبان. جميع الحقوق محفوظة</p>
+    </footer>
+    <script src="../actions/script.js"></script>
+</body>
+</html>

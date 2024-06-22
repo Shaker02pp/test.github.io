@@ -1,0 +1,72 @@
+.styled-hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, #627482, #b1ddff);
+    margin: 20px 0;
+}
+
+.styled2-hr {
+    border: none;
+    border-top: 3px solid rgba(255, 255, 255, 0.1);
+    height: 0;
+    background-image: linear-gradient(to right, transparent, #fff 40%, transparent 60%, transparent);
+    margin: 20px 0;
+    position: relative;
+    top: 10px; /* Adjust this value to shift the line down as needed */
+}
+.styled3-hr {
+    border: none;
+    height: 1px;
+    background: #ccc;
+    margin-bottom: 30px;
+    width: 90%;
+    animation: inlarge 5s linear infinite;
+}
+
+@keyframes inlarge {
+    0% {
+        width: 90%;
+    }
+    50% {
+        width: 70%;
+    }
+}
+
+.styled4-hr {
+    border: 0;
+    line-height: 1em;
+    position: relative;
+    text-align: center;
+    height: 1.5em;
+    font-size: 20px;
+    margin: 30px 15px;
+    animation: bite 2s linear infinite;
+  }
+  
+@keyframes bite {
+    0% {
+        font-size: 20px;
+    }
+    50% {
+        font-size: 40px;
+    }
+}
+
+  .styled4-hr::before {
+      content: "";
+      background: linear-gradient(to right, transparent, white, transparent);
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      height: 1px;
+  }
+  
+  .styled4-hr::after {
+      content: attr(data-content);
+      position: relative;
+      padding: 0 7px;
+      line-height: 1.5em;
+      color: white;
+      background-color: #00052d;
+  }
